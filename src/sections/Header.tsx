@@ -6,7 +6,7 @@ export const Header = () => {
     return (
         <div className="w-auto relative text-white">
             <TopNavBar />
-            <div className="lg:h-[1022px] sm:h-[1194px] h-[812px] bg-[url('/title-bg.jpg')] bg-cover shadow-[inset_0_0_0_2000px_rgba(48,41,38,0.8)] flex flex-col items-center">
+            <div className="lg:h-[1022px] sm:h-[1194px] h-[812px] bg-[url('/title-bg.jpg')] bg-no-repeat bg-cover bg-center shadow-[inset_0_0_0_2000px_rgba(48,41,38,0.8)] flex flex-col items-center">
                 <div className="lg:mt-[388px] sm:mt-[415px] mt-[275px] lg:px-20 px-10">
                     <SectionTitle
                         text="Honning frå Sunnmørsalpane"
