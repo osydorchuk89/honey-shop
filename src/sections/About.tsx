@@ -8,9 +8,9 @@ export const About = () => {
         >
             <SectionTitle text="About" fontColor="black" />
             <div className="flex flex-col lg:gap-10 gap-6">
-                <div className="sm:grid lg:grid-cols-10 lg:grid-rows-2 lg:gap-x-5 lg:gap-y-10 sm:grid-cols-2 flex flex-col gap-6">
-                    <div className="lg:col-span-4">
-                        <p className="text-xl leading-[28px]">
+                <div className="sm:grid lg:grid-cols-5 lg:grid-rows-2 lg:gap-x-5 lg:gap-y-10 sm:grid-cols-2 flex flex-col gap-6">
+                    <div className="lg:col-span-2">
+                        <p className="lg:text-xl text-lg lg:leading-[28px] leading-[26px]">
                             Lorem ipsum dolor sit amet consectetur. Volutpat id
                             pellentesque lorem egestas ac adipiscing sit. Et sem
                             sit arcu ipsum ornare elit fermentum. Proin
@@ -24,20 +24,20 @@ export const About = () => {
                             tempor
                         </p>
                     </div>
-                    <div className="lg:col-span-6 lg:col-start-5">
+                    <div className="lg:col-span-3 lg:col-start-3">
                         <img
                             className="sm:h-0 sm:min-h-full w-full object-cover rounded-2xl"
                             src="honey-jar.jpg"
                         />
                     </div>
-                    <div className="lg:col-span-6 lg:row-start-2">
+                    <div className="lg:col-span-3 lg:row-start-2">
                         <img
                             className="sm:h-0 sm:min-h-full w-full object-cover rounded-2xl"
                             src="bee.jpg"
                         />
                     </div>
-                    <div className="lg:col-span-4 lg:col-start-7 lg:row-start-2">
-                        <p className="text-xl leading-[28px]">
+                    <div className="lg:col-span-2 lg:col-start-4 lg:row-start-2">
+                        <p className="lg:text-xl text-lg lg:leading-[28px] leading-[26px]">
                             Lorem ipsum dolor sit amet consectetur. Volutpat id
                             pellentesque lorem egestas ac adipiscing sit. Et sem
                             sit arcu ipsum ornare elit fermentum. Proin

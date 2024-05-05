@@ -3,13 +3,16 @@ import { ContactForm } from "../components/ContactForm";
 
 export const ContactUs = () => {
     return (
-        <div id="contact" className="px-20 py-[104px] flex flex-col gap-16">
+        <div
+            id="contact"
+            className="lg:px-20 sm:px-10 px-4 lg:py-[104px] py-20 flex flex-col gap-16"
+        >
             <SectionTitle text="Contact us" fontColor="black" />
-            <div className="flex justify-between">
+            <div className="grid lg:grid-cols-2 grid-cols-1 gap-10">
                 <ContactForm />
                 <img
                     src="honey.jpg"
-                    className="w-[630px] object-cover rounded-3xl"
+                    className="object-cover rounded-3xl lg:h-0 lg:min-h-full"
                 />
             </div>
         </div>

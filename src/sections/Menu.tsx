@@ -4,11 +4,11 @@ export const Menu = () => {
     return (
         <div
             id="menu"
-            className="px-20 py-[104px] flex flex-col gap-16 bg-brown"
+            className="lg:px-20 sm:px-10 px-4 lg:py-[104px] py-20 flex flex-col gap-16 bg-brown"
         >
             <SectionTitle text="About" fontColor="white" />
-            <div className="flex justify-between items-center">
-                <article className="w-[500px] flex flex-col gap-4 text-white text-xl leading-[28px]">
+            <div className="flex lg:flex-row flex-col gap-10 justify-between items-center">
+                <article className="2xl:w-[700px] xl:w-[600px] lg:w-[500px] flex flex-col gap-4 text-white sm:text-xl text-lg sm:leading-[28px] leading-[26px]">
                     <p>
                         Lorem ipsum dolor sit amet consectetur. Volutpat id
                         pellentesque lorem egestas ac adipiscing sit. Et sem sit
@@ -32,7 +32,10 @@ export const Menu = () => {
                         lectus ultrices.
                     </p>
                 </article>
-                <img src="polygon.png" className="w-[500px]" />
+                <img
+                    src="polygon.png"
+                    className="2xl:w-[700px] xl:w-[600px] lg:w-[500px] w-auto"
+                />
             </div>
         </div>
     );

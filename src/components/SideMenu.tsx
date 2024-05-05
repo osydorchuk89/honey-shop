@@ -8,12 +8,12 @@ export const SideMenu = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <div className="">
+        <div className="lg:hidden">
             <button onClick={() => setIsOpen(true)}>
                 <MenuIcon />
             </button>
             <Dialog open={isOpen} onClose={() => setIsOpen(false)}>
-                <div className="fixed inset-0 flex w-screen items-center justify-center">
+                <div className="lg:hidden fixed inset-0 flex w-screen items-center justify-center">
                     <Dialog.Panel className="w-full h-full bg-brown flex flex-col justify-center items-center gap-[104px] relative">
                         <button
                             className="absolute top-10 right-4"

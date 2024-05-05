@@ -27,10 +27,10 @@ export const ContactForm = () => {
     return (
         <form
             noValidate
-            className="w-[630px] flex flex-col items-start"
+            className="w-full flex flex-col lg:items-start items-center"
             onSubmit={handleSubmit(onSubmit)}
         >
-            <p className="mb-8 text-xl leading-[28px]">
+            <p className="mb-8 text-xl leading-[28px] self-start">
                 Enter your contact details and we will reply within 24 hours
             </p>
             <div className="w-full flex flex-col gap-6 mb-10">

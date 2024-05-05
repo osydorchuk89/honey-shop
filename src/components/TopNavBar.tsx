@@ -4,7 +4,7 @@ import { navLinks } from "../utils/data";
 
 export const TopNavBar = () => {
     return (
-        <nav className="w-full h-20 md:h-28 absolute top-12 md:top-4 lg:px-20 px-10 flex justify-between items-center">
+        <nav className="w-full md:h-28 h-20 absolute md:top-4 top-12 lg:px-20 px-10 flex justify-between items-center">
             <a href="/">
                 <img src="logo.png" />
             </a>
