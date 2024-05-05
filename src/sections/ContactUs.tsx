@@ -12,7 +12,7 @@ export const ContactUs = () => {
                 <ContactForm />
                 <img
                     src="honey.jpg"
-                    className="object-cover rounded-3xl lg:h-0 lg:min-h-full"
+                    className="w-full object-cover rounded-3xl lg:h-0 lg:min-h-full"
                 />
             </div>
         </div>
