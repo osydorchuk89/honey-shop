@@ -12,7 +12,7 @@ export default {
         },
         extend: {
             fontFamily: {
-                sans: ["Lato", "Puritan", "Roboto Flex"],
+                sans: ["Gill Sans", "Lato", "Roboto Flex"],
                 handwritten: ["Gloria Hallelujah"],
             },
             boxShadow: {
