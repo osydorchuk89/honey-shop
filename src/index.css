@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Puritan:ital,wght@0,400;0,700;1,400;1,700&family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap");
 
 @tailwind base;
@@ -7,11 +7,11 @@
 
 @layer base {
     @font-face {
-        font-family: "Gill Sans";
+        font-family: "Builto";
         font-style: normal;
         font-weight: 400;
         font-display: swap;
-        src: url("/fonts/gill-sans.otf") format("opentype");
+        src: url("/fonts/builto.ttf") format("truetype");
     }
 }
 

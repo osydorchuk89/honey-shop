@@ -12,8 +12,8 @@ export default {
         },
         extend: {
             fontFamily: {
-                sans: ["Gill Sans", "Lato", "Roboto Flex"],
-                handwritten: ["Gloria Hallelujah"],
+                sans: ["Noto Sans"],
+                handwritten: ["Builto", "Gloria Hallelujah"],
             },
             boxShadow: {
                 "button-hovered": "0px 4px 4px 0px #EBA52640",

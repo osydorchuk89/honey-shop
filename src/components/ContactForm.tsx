@@ -1,7 +1,7 @@
 import { SubmitHandler, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { ContactFormSchema } from "../utils/schemas";
-import { Button } from "./Button";
+import { ContactButton } from "./ContactButton";
 
 interface ContactInputs {
     name: string;
@@ -9,7 +9,19 @@ interface ContactInputs {
     message: string;
 }
 
-export const ContactForm = () => {
+interface ContacFormProps {
+    intro: string;
+    inputOne: string;
+    inputTwo: string;
+    inputThree: string;
+}
+
+export const ContactForm = ({
+    intro,
+    inputOne,
+    inputTwo,
+    inputThree,
+}: ContacFormProps) => {
     const {
         register,
         handleSubmit,
@@ -30,9 +42,7 @@ export const ContactForm = () => {
             className="w-full flex flex-col lg:items-start items-center"
             onSubmit={handleSubmit(onSubmit)}
         >
-            <p className="mb-8 text-xl leading-[28px] self-start">
-                Enter your contact details and we will reply within 24 hours
-            </p>
+            <p className="mb-8 text-xl leading-[28px] self-start">{intro}</p>
             <div className="w-full flex flex-col gap-6 mb-10">
                 <div className="flex flex-col w-full">
                     <input
@@ -40,7 +50,7 @@ export const ContactForm = () => {
                         className="bg-gray p-4 rounded-lg text-lg"
                         type="text"
                         id="name"
-                        placeholder="Your name"
+                        placeholder={inputOne}
                     />
                     <p className="text-red">{errors.name?.message}</p>
                 </div>
@@ -50,7 +60,7 @@ export const ContactForm = () => {
                         className="bg-gray p-4 rounded-lg text-lg"
                         type="tel"
                         id="phone"
-                        placeholder="Your phone number"
+                        placeholder={inputTwo}
                     />
                     <p className="text-red">{errors.phone?.message}</p>
                 </div>
@@ -61,14 +71,12 @@ export const ContactForm = () => {
                         cols={40}
                         rows={5}
                         id="message"
-                        placeholder="Your message"
+                        placeholder={inputThree}
                     />
                     <p className="text-red">{errors.message?.message}</p>
                 </div>
             </div>
-            <Button style="filled">
-                <p className="text-xl leading-[26px]">Contact</p>
-            </Button>
+            <ContactButton />
         </form>
     );
 };
