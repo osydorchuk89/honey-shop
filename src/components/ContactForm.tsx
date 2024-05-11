@@ -69,15 +69,10 @@ export const ContactForm = ({
                     publicKey: EMAILJS_PUBLIC_KEY,
                 }
             )
-            .then(
-                () => {
-                    dispatch(contactFormActions.openSuccessPopUp());
-                    dispatch(contactFormActions.stopSendingData());
-                },
-                (error) => {
-                    console.log("FAILED...", error);
-                }
-            );
+            .then(() => {
+                dispatch(contactFormActions.openSuccessPopUp());
+                dispatch(contactFormActions.stopSendingData());
+            });
         reset();
     };
 
