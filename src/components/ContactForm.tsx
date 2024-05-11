@@ -3,7 +3,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import emailjs from "@emailjs/browser";
 import { ContactFormSchema } from "../utils/schemas";
 import { Button } from "./Button";
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import { useAppDispatch, useAppSelector } from "../store/hooks";
 import { contactFormActions } from "../store";
 
@@ -45,8 +45,6 @@ export const ContactForm = ({
     const { dataIsSending } = useAppSelector((store) => store.contactForm);
     const dispatch = useAppDispatch();
 
-    const [error, setError] = useState(false);
-
     const {
         register,
         handleSubmit,
@@ -59,8 +57,6 @@ export const ContactForm = ({
     const EMAILJS_SERVICE_ID = process.env.EMAILJS_SERVICE_ID!;
     const EMAILJS_TEMPLATE_ID = process.env.EMAILJS_TEMPLATE_ID!;
     const EMAILJS_PUBLIC_KEY = process.env.EMAILJS_PUBLIC_KEY!;
-    console.log(EMAILJS_SERVICE_ID);
-    console.log(EMAILJS_PUBLIC_KEY);
 
     const onSubmit: SubmitHandler<ContactInputs> = () => {
         dispatch(contactFormActions.startSendingData());
@@ -79,9 +75,10 @@ export const ContactForm = ({
                     dispatch(contactFormActions.openSuccessPopUp());
                     dispatch(contactFormActions.stopSendingData());
                 },
-                (_) => {
+                (error) => {
                     reset();
-                    setError(true);
+                    console.log(error);
+                    dispatch(contactFormActions.openFailurePopUp());
                     dispatch(contactFormActions.stopSendingData());
                 }
             );
@@ -114,11 +111,6 @@ export const ContactForm = ({
             }`}
             onSubmit={handleSubmit(onSubmit)}
         >
-            {error && (
-                <p className="text-red">
-                    Something went wrong. Please try again later.
-                </p>
-            )}
             <p
                 className={`${
                     formVariants[location as keyof FormVariantsType].p

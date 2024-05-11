@@ -8,6 +8,7 @@ import { ContactUs } from "./sections/ContactUs";
 import { Contacts } from "./sections/Contacts";
 import { Footer } from "./sections/Footer";
 import { SuccessPopUp } from "./components/SuccessPopUp";
+import { FailurePopUp } from "./components/FailurePopUp";
 
 window.onbeforeunload = () => {
     window.scrollTo(0, 0);
@@ -24,6 +25,7 @@ export const App = () => {
             <Contacts />
             <Footer />
             <SuccessPopUp />
+            <FailurePopUp />
         </Provider>
     );
 };

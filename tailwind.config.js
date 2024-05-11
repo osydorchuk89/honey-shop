@@ -9,6 +9,7 @@ export default {
             brown: "#302926",
             gray: "#E6E6E6",
             red: "#991b1b",
+            green: "#4d7c0f",
         },
         extend: {
             fontFamily: {

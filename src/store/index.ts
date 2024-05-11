@@ -42,6 +42,7 @@ const contactFormSlice = createSlice({
     initialState: {
         dialogIsOpen: false,
         successPopUpIsOpen: false,
+        failurePopUpIsOpen: false,
         dataIsSending: false,
     },
     reducers: {
@@ -56,6 +57,14 @@ const contactFormSlice = createSlice({
         },
         closeSuccessPopUp(state) {
             state.successPopUpIsOpen = false;
+            state.dialogIsOpen = false;
+        },
+        openFailurePopUp(state) {
+            state.failurePopUpIsOpen = true;
+        },
+        closeFailurePopUp(state) {
+            state.failurePopUpIsOpen = false;
+            state.dialogIsOpen = false;
         },
         startSendingData(state) {
             state.dataIsSending = true;
