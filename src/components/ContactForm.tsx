@@ -3,7 +3,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import emailjs from "@emailjs/browser";
 import { ContactFormSchema } from "../utils/schemas";
 import { Button } from "./Button";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { useAppDispatch, useAppSelector } from "../store/hooks";
 import { contactFormActions } from "../store";
 
@@ -45,6 +45,8 @@ export const ContactForm = ({
     const { dataIsSending } = useAppSelector((store) => store.contactForm);
     const dispatch = useAppDispatch();
 
+    const [error, setError] = useState(false);
+
     const {
         register,
         handleSubmit,
@@ -54,9 +56,9 @@ export const ContactForm = ({
         resolver: zodResolver(ContactFormSchema),
     });
 
-    const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID!;
-    const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID!;
-    const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY!;
+    const EMAILJS_SERVICE_ID = import.meta.env.EMAILJS_SERVICE_ID!;
+    const EMAILJS_TEMPLATE_ID = import.meta.env.EMAILJS_TEMPLATE_ID!;
+    const EMAILJS_PUBLIC_KEY = import.meta.env.EMAILJS_PUBLIC_KEY!;
     console.log(EMAILJS_SERVICE_ID);
     console.log(EMAILJS_PUBLIC_KEY);
 
@@ -73,12 +75,16 @@ export const ContactForm = ({
             )
             .then(
                 () => {
+                    reset();
                     dispatch(contactFormActions.openSuccessPopUp());
                     dispatch(contactFormActions.stopSendingData());
                 },
-                (error) => console.log("Error: ", error)
+                (error) => {
+                    reset();
+                    setError(true);
+                    dispatch(contactFormActions.stopSendingData());
+                }
             );
-        reset();
     };
 
     const formRef = useRef(null);
@@ -108,6 +114,11 @@ export const ContactForm = ({
             }`}
             onSubmit={handleSubmit(onSubmit)}
         >
+            {error && (
+                <p className="text-red">
+                    Something went wrong. Please try again later.
+                </p>
+            )}
             <p
                 className={`${
                     formVariants[location as keyof FormVariantsType].p
