@@ -16,11 +16,15 @@ export default defineConfig(({ command, mode }) => {
     return {
         plugins: [react()],
         define: {
-            __EMAILJS_SERVICE_ID__: JSON.stringify(env.VITE_EMAILJS_SERVICE_ID),
-            __EMAILJS_TEMPLATE_ID__: JSON.stringify(
+            "process.env.VITE_EMAILJS_SERVICE_ID": JSON.stringify(
+                env.VITE_EMAILJS_SERVICE_ID
+            ),
+            "process.env.VITE_EMAILJS_TEMPLATE_ID": JSON.stringify(
                 env.VITE_EMAILJS_TEMPLATE_ID
             ),
-            __EMAILJS_PUBLIC_KEY__: JSON.stringify(env.VITE_EMAILJS_PUBLIC_KEY),
+            "process.env.VITE_EMAILJS_PUBLIC_KEY": JSON.stringify(
+                env.VITE_EMAILJS_PUBLIC_KEY
+            ),
         },
     };
 });
