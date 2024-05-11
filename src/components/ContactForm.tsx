@@ -79,7 +79,7 @@ export const ContactForm = ({
                     dispatch(contactFormActions.openSuccessPopUp());
                     dispatch(contactFormActions.stopSendingData());
                 },
-                (error) => {
+                (_) => {
                     reset();
                     setError(true);
                     dispatch(contactFormActions.stopSendingData());
