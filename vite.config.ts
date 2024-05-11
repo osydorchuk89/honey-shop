@@ -12,19 +12,14 @@ import react from "@vitejs/plugin-react";
 // });
 
 export default defineConfig(({ command, mode }) => {
-    const env = loadEnv(mode, process.cwd(), "");
+    // const env = loadEnv(mode, process.cwd(), "");
     return {
         plugins: [react()],
         define: {
-            "process.env.VITE_EMAILJS_SERVICE_ID": JSON.stringify(
-                env.VITE_EMAILJS_SERVICE_ID
-            ),
-            "process.env.VITE_EMAILJS_TEMPLATE_ID": JSON.stringify(
-                env.VITE_EMAILJS_TEMPLATE_ID
-            ),
-            "process.env.VITE_EMAILJS_PUBLIC_KEY": JSON.stringify(
-                env.VITE_EMAILJS_PUBLIC_KEY
-            ),
+            "process.env": process.env,
+            VITE_EMAILJS_SERVICE_ID: process.env.VITE_EMAILJS_SERVICE_ID,
+            VITE_EMAILJS_TEMPLATE_ID: process.env.VITE_EMAILJS_TEMPLATE_ID,
+            VITE_EMAILJS_PUBLIC_KEY: process.env.VITE_EMAILJS_PUBLIC_KEY,
         },
     };
 });
