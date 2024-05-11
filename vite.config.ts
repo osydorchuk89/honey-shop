@@ -5,8 +5,8 @@ import react from "@vitejs/plugin-react";
 export default defineConfig({
     plugins: [react()],
     define: {
-        VITE_EMAILJS_SERVICE_ID: process.env.VITE_EMAILJS_SERVICE_ID,
-        VITE_EMAILJS_TEMPLATE_ID: process.env.VITE_EMAILJS_TEMPLATE_ID,
-        VITE_EMAILJS_PUBLIC_KEY: process.env.VITE_EMAILJS_PUBLIC_KEY,
+        __EMAILJS_SERVICE_ID__: process.env.VITE_EMAILJS_SERVICE_ID,
+        __EMAILJS_TEMPLATE_ID__: process.env.VITE_EMAILJS_TEMPLATE_ID,
+        __EMAILJS_PUBLIC_KEY__: process.env.VITE_EMAILJS_PUBLIC_KEY,
     },
 });
