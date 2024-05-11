@@ -1,14 +1,13 @@
-import { useContext } from "react";
-import { LanguageContext } from "../context/LanguageContext";
 import { SectionTitle } from "../components/SectionTitle";
 import { LanguageContent, honeyText } from "../utils/data";
 import { HoneyCombs } from "../components/HoneyCombs";
-import { NavigationContext } from "../context/NavigationContext";
 import { useInView } from "react-intersection-observer";
+import { useAppDispatch, useAppSelector } from "../store/hooks";
+import { navigationActions } from "../store";
 
 export const Honey = () => {
-    const { language } = useContext(LanguageContext);
-    const { changeSection } = useContext(NavigationContext);
+    const { language } = useAppSelector((store) => store.language);
+    const dispatch = useAppDispatch();
 
     const content =
         language === "en"
@@ -18,7 +17,7 @@ export const Honey = () => {
     const { ref } = useInView({
         rootMargin: "-50% 0% -50% 0%",
         onChange: (inView) => {
-            inView && changeSection("honey");
+            inView && dispatch(navigationActions.change("honey"));
         },
     });
 

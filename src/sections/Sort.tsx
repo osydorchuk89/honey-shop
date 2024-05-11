@@ -1,19 +1,19 @@
-import { useContext } from "react";
-import { LanguageContext } from "../context/LanguageContext";
-import { NavigationContext } from "../context/NavigationContext";
 import { sortText } from "../utils/data";
 import { SectionTitle } from "../components/SectionTitle";
 import { useInView } from "react-intersection-observer";
+import { CombsIcon } from "../components/Icons";
+import { useAppDispatch, useAppSelector } from "../store/hooks";
+import { navigationActions } from "../store";
 
 export const Sort = () => {
-    const { language } = useContext(LanguageContext);
-    const { changeSection } = useContext(NavigationContext);
+    const { language } = useAppSelector((store) => store.language);
+    const dispatch = useAppDispatch();
     const sortItems = language === "en" ? sortText.en : sortText.no;
 
     const { ref } = useInView({
         rootMargin: "-50% 0% -50% 0%",
         onChange: (inView) => {
-            inView && changeSection("sort");
+            inView && dispatch(navigationActions.change("sort"));
         },
     });
 
@@ -36,16 +36,13 @@ export const Sort = () => {
                     <div className="flex flex-col gap-2" key={item.title}>
                         <div className="flex items-center gap-2">
                             <div className="flex justify-center">
-                                <img
-                                    src="honey-comb.png"
-                                    className="text-center"
-                                />
+                                <CombsIcon />
                             </div>
-                            <p className="text-[32px] leading-[48px]">
+                            <p className="text-black dark:text-black text-[32px] leading-[48px]">
                                 {item.title}
                             </p>
                         </div>
-                        <p className="sm:text-xl text-lg sm:leading-[28px] leading-[26px]">
+                        <p className="sm:text-xl text-black dark:text-black text-lg sm:leading-[28px] leading-[26px]">
                             {item.text}
                         </p>
                     </div>

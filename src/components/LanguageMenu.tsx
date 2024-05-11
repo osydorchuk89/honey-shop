@@ -1,9 +1,8 @@
-import { useContext } from "react";
-import { LanguageContext } from "../context/LanguageContext";
 import { Menu } from "@headlessui/react";
+import { useAppSelector } from "../store/hooks";
 
 export const LanguageMenu = () => {
-    const { language } = useContext(LanguageContext);
+    const { language } = useAppSelector((store) => store.language);
     const otherLanguage = language === "en" ? "NO" : "EN";
 
     return (
@@ -25,7 +24,7 @@ export const LanguageMenu = () => {
                             location.reload();
                         }}
                     >
-                        <p className="text-black text-[18px] leading-[20.67px]">
+                        <p className="text-black dark:hover:text-black text-[18px] leading-[20.67px]">
                             {otherLanguage}
                         </p>
                     </button>

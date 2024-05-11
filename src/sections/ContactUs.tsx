@@ -1,14 +1,13 @@
 import { SectionTitle } from "../components/SectionTitle";
 import { ContactForm } from "../components/ContactForm";
-import { useContext } from "react";
-import { LanguageContext } from "../context/LanguageContext";
 import { LanguageContent, contactUsText } from "../utils/data";
-import { NavigationContext } from "../context/NavigationContext";
 import { useInView } from "react-intersection-observer";
+import { useAppDispatch, useAppSelector } from "../store/hooks";
+import { navigationActions } from "../store";
 
 export const ContactUs = () => {
-    const { language } = useContext(LanguageContext);
-    const { changeSection } = useContext(NavigationContext);
+    const { language } = useAppSelector((store) => store.language);
+    const dispatch = useAppDispatch();
 
     const content =
         language === "en"
@@ -18,7 +17,7 @@ export const ContactUs = () => {
     const { ref } = useInView({
         rootMargin: "-50% 0% -50% 0%",
         onChange: (inView) => {
-            inView && changeSection("contact");
+            inView && dispatch(navigationActions.change("contact"));
         },
     });
 
@@ -35,6 +34,8 @@ export const ContactUs = () => {
                     inputOne={content.inputOne!}
                     inputTwo={content.inputTwo!}
                     inputThree={content.inputThree!}
+                    location="onPage"
+                    langNum={language === "en" ? 0 : 1}
                 />
                 <img
                     src="honey.jpg"

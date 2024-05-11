@@ -1,18 +1,17 @@
-import { useContext } from "react";
 import { SectionTitle } from "../components/SectionTitle";
-import { LanguageContext } from "../context/LanguageContext";
 import { LanguageContent, aboutText } from "../utils/data";
-import { NavigationContext } from "../context/NavigationContext";
 import { useInView } from "react-intersection-observer";
+import { useAppDispatch, useAppSelector } from "../store/hooks";
+import { navigationActions } from "../store";
 
 export const About = () => {
-    const { language } = useContext(LanguageContext);
-    const { changeSection } = useContext(NavigationContext);
+    const { language } = useAppSelector((store) => store.language);
+    const dispatch = useAppDispatch();
 
     const { ref } = useInView({
         rootMargin: "-50% 0% -50% 0%",
         onChange: (inView) => {
-            inView && changeSection("about");
+            inView && dispatch(navigationActions.change("about"));
         },
     });
     const content =

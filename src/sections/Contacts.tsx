@@ -1,18 +1,17 @@
-import { useContext } from "react";
 import { SectionTitle } from "../components/SectionTitle";
 import { SocialMediaBox } from "../components/SocialMediaBox";
-import { LanguageContext } from "../context/LanguageContext";
-import { NavigationContext } from "../context/NavigationContext";
 import { useInView } from "react-intersection-observer";
+import { useAppDispatch, useAppSelector } from "../store/hooks";
+import { navigationActions } from "../store";
 
 export const Contacts = () => {
-    const { language } = useContext(LanguageContext);
-    const { changeSection } = useContext(NavigationContext);
+    const { language } = useAppSelector((store) => store.language);
+    const dispatch = useAppDispatch();
 
     const { ref } = useInView({
         rootMargin: "-50% 0% -50% 0%",
         onChange: (inView) => {
-            inView && changeSection("none");
+            inView && dispatch(navigationActions.change("none"));
         },
     });
 

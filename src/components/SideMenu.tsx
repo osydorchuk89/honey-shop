@@ -1,13 +1,13 @@
-import { useState, useContext } from "react";
+import { useState } from "react";
 import { Dialog } from "@headlessui/react";
 import { MenuIcon, CloseIcon } from "./Icons";
 import { navLinks } from "../utils/data";
 import { LanguageMenu } from "./LanguageMenu";
-import { LanguageContext } from "../context/LanguageContext";
+import { useAppSelector } from "../store/hooks";
 
 export const SideMenu = () => {
     const [isOpen, setIsOpen] = useState(false);
-    const { language } = useContext(LanguageContext);
+    const { language } = useAppSelector((store) => store.language);
 
     return (
         <div className="lg:hidden">
@@ -21,7 +21,7 @@ export const SideMenu = () => {
                             className="absolute top-10 right-4"
                             onClick={() => setIsOpen(false)}
                         >
-                            <CloseIcon />
+                            <CloseIcon color="white" style="w-10 h-10" />
                         </button>
                         <ul className="flex flex-col justify-center items-center gap-14 text-white text-[18px] leading-[20.67px]">
                             {navLinks.map((item) => (

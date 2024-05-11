@@ -1,19 +1,18 @@
-import { useContext } from "react";
-import { LanguageContext } from "../context/LanguageContext";
-import { ContactButton } from "../components/ContactButton";
 import { TopNavBar } from "../components/TopNavBar";
 import { headerText } from "../utils/data";
-import { NavigationContext } from "../context/NavigationContext";
 import { useInView } from "react-intersection-observer";
+import { ContactFormDialog } from "../components/ContactFormDialog";
+import { useAppDispatch, useAppSelector } from "../store/hooks";
+import { navigationActions } from "../store";
 
 export const Header = () => {
-    const { language } = useContext(LanguageContext);
-    const { changeSection } = useContext(NavigationContext);
+    const { language } = useAppSelector((store) => store.language);
+    const dispatch = useAppDispatch();
 
     const { ref } = useInView({
         rootMargin: "-50% 0% -50% 0%",
         onChange: (inView) => {
-            inView && changeSection("none");
+            inView && dispatch(navigationActions.change("none"));
         },
     });
 
@@ -29,9 +28,7 @@ export const Header = () => {
                 <p className="lg:mt-10 sm:mt-12 mt-6 lg:mb-20 sm:mb-[104px] mb-[180px] lg:w-1/2 md:w-2/3 md:p-0 sm:px-10 px-4 text-center lg:text-[32px] sm:text-[28px] text-xl lg:leading-[48px] sm:leading-[42px] leading-[30px]">
                     {language === "en" ? headerText.en : headerText.no}
                 </p>
-                <a href="#contact">
-                    <ContactButton />
-                </a>
+                <ContactFormDialog />
             </div>
         </div>
     );

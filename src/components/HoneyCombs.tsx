@@ -1,6 +1,6 @@
-import { useContext, useState } from "react";
+import { useState } from "react";
 import { HexagonIcon } from "./Icons";
-import { LanguageContext } from "../context/LanguageContext";
+import { useAppSelector } from "../store/hooks";
 
 const upperRowText = {
     en: [
@@ -36,7 +36,7 @@ const bottomRowText = {
 };
 
 export const HoneyCombs = () => {
-    const { language } = useContext(LanguageContext);
+    const { language } = useAppSelector((store) => store.language);
     const upperRowContent =
         language === "en" ? upperRowText.en : upperRowText.no;
     const bottomRowContent =
@@ -52,7 +52,7 @@ export const HoneyCombs = () => {
     });
 
     const rowStyle =
-        "h-[259px] flex justify-center items-center hover:scale-125 ease-in-out duration-300 text-white hover:text-black hover:z-10";
+        "h-[259px] flex justify-center items-center hover:scale-125 ease-in-out duration-300 text-white hover:text-black dark:hover:text-black hover:z-10";
 
     return (
         <div className="flex flex-col justify-center items-center xl:w-[736px] w-[800px] h-[750px] xl:px-0 px-10 xl:m-0 m-auto">

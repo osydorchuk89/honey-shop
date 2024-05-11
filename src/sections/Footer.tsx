@@ -1,14 +1,14 @@
-import { useContext } from "react";
-import { NavigationContext } from "../context/NavigationContext";
 import { useInView } from "react-intersection-observer";
+import { useAppDispatch } from "../store/hooks";
+import { navigationActions } from "../store";
 
 export const Footer = () => {
-    const { changeSection } = useContext(NavigationContext);
+    const dispatch = useAppDispatch();
 
     const { ref } = useInView({
         rootMargin: "-50% 0% -50% 0%",
         onChange: (inView) => {
-            inView && changeSection("none");
+            inView && dispatch(navigationActions.change("none"));
         },
     });
 

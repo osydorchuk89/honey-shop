@@ -1,15 +1,12 @@
 import { LanguageMenu } from "./LanguageMenu";
 import { SideMenu } from "./SideMenu";
 import { navLinks } from "../utils/data";
-import { useContext, useEffect, useState } from "react";
-import { LanguageContext } from "../context/LanguageContext";
-import { NavigationContext } from "../context/NavigationContext";
+import { useEffect, useState } from "react";
+import { useAppSelector } from "../store/hooks";
 
 export const TopNavBar = () => {
-    const { language } = useContext(LanguageContext);
-    const { section } = useContext(NavigationContext);
-
-    console.log(section);
+    const { language } = useAppSelector((store) => store.language);
+    const { section } = useAppSelector((store) => store.navigation);
 
     const TOP_OFFSET = 50;
     const [hasScrolled, setHasScrolled] = useState(false);
