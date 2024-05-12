@@ -121,9 +121,12 @@ export const HoneyCombs = () => {
                     <HexagonIcon bgColor="none" />
                     <div className="relative">
                         <div className="absolute -top-[78.5px] -left-[206.5px] w-[193px] h-[156px] px-6 flex justify-between items-center">
-                            <img src="ear.png" />
-                            <img src="line.png" className="h-[244px]" />
-                            <img src="dandelion.png" className="mr-[-16px]" />
+                            <img src="images/ear.png" />
+                            <img src="images/line.png" className="h-[244px]" />
+                            <img
+                                src="images/dandelion.png"
+                                className="mr-[-16px]"
+                            />
                         </div>
                     </div>
                 </div>

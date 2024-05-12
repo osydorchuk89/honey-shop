@@ -36,7 +36,7 @@ export const About = () => {
                     <div className="lg:col-span-3 lg:col-start-3">
                         <img
                             className="sm:h-0 sm:min-h-full w-full object-cover 2xl:object-[0px_33%] xl:object-[0px_38%] object-center rounded-2xl"
-                            src="beekeper.jpg"
+                            src="images/beekeper.jpg"
                         />
                     </div>
                 </div>
@@ -44,7 +44,7 @@ export const About = () => {
                     {[...Array(6).keys()].map((num) => (
                         <img
                             key={num}
-                            src={`image-${num}.jpg`}
+                            src={`images/image-${num}.jpg`}
                             className="h-[248px] w-full object-cover rounded-3xl"
                         />
                     ))}

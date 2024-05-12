@@ -46,7 +46,7 @@ export const TopNavBar = () => {
     return (
         <nav className={hasScrolled ? scrolledNavBarStyle : navBarStyle}>
             <a href="/">
-                <img src="logo.png" />
+                <img src="images/logo.png" />
             </a>
             <ul className="hidden md:flex justify-between gap-[72px] text-[18px] leading-[20.67px]">
                 {navLinks.map((item) => (

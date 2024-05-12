@@ -18,7 +18,7 @@ export const Contacts = () => {
     return (
         <div
             ref={ref}
-            className="bg-[url('/honeycombs.png')] bg-no-repeat bg-cover bg-center shadow-[inset_0_0_0_2000px_rgba(235,165,38,0.8)] lg:px-20 sm:px-10 px-4 lg:py-[104px] py-20 flex flex-col items-center lg:gap-16 gap-10 lg:scroll-mt-12 scroll-mt-20"
+            className="bg-[url('/images/honeycombs.jpg')] bg-no-repeat bg-cover bg-center shadow-[inset_0_0_0_2000px_rgba(235,165,38,0.8)] lg:px-20 sm:px-10 px-4 lg:py-[104px] py-20 flex flex-col items-center lg:gap-16 gap-10 lg:scroll-mt-12 scroll-mt-20"
         >
             <SectionTitle
                 text={

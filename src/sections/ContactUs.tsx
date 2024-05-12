@@ -38,7 +38,7 @@ export const ContactUs = () => {
                     langNum={language === "en" ? 0 : 1}
                 />
                 <img
-                    src="honey.jpg"
+                    src="images/honey.jpg"
                     className="w-full object-cover rounded-3xl lg:h-0 lg:min-h-full"
                 />
             </div>
