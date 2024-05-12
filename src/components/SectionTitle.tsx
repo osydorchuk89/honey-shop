@@ -14,7 +14,7 @@ export const SectionTitle = ({
 
     const intermediarySectionTitleStyle = onDialog
         ? initialSectionTitleStyle
-        : initialSectionTitleStyle + " lg:text-left";
+        : initialSectionTitleStyle + " xl:text-left";
 
     const finalSectionStyle =
         fontColor === "black"
