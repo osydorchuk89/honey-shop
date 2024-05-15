@@ -70,14 +70,14 @@ export const aboutText: SectionText = {
         firstParagraph:
             "Beekeeping started in 2015. Every year interest in bees and nature only increased. Now I’m a member of the Norwegian Association of Beekeepers and I took a certified course for beekeepers in Norway.",
         secondParagraph:
-            "The hives are located near the city of Sikkilven in the area of the beautiful Sunmersky Alps, so I called my honey Sunnṁrealpane honning. This region is famous for its good ecology, clean water from the mountain peaks (water is also needed for bees to produce honey) and mountain meadows, which grow many colors, fruit trees and heather.",
+            "The hives are located near the city of Sykkylven in the area of the beautiful Sunmersky Alps, so I called my honey Sunnmørealpane honning. This region is famous for its good ecology, clean water from the mountain peaks (water is also needed for bees to produce honey) and mountain meadows, which grow many colors, fruit trees and heather.",
     },
     no: {
         title: "Birøktens hemmeligheter: veien fra blomst til honningkrukke",
         firstParagraph:
             "Jeg begynte med birøkt i 2015. Interessen for bier og naturen bare økte for hvert år. Nå er jeg medlem av Norges Birøkterlag, og jeg har tatt et sertifisert kurs for birøktere i Norge. ",
         secondParagraph:
-            "Bikubene står i nærheten av byen Sikkilven i området rundt de vakre Sunmerskijalpene, så jeg har kalt honningen min Sunnṁrealpane honning. Denne regionen er kjent for sin gode økologi, rent vann fra fjelltoppene (vann er også nødvendig for at biene skal kunne produsere honning) og fjellenger, der det vokser mange farger, frukttrær og lyng.",
+            "Bikubene står i nærheten av byen Sykkylven i området rundt de vakre Sunmerskijalpene, så jeg har kalt honningen min Sunnṁrealpane honning. Denne regionen er kjent for sin gode økologi, rent vann fra fjelltoppene (vann er også nødvendig for at biene skal kunne produsere honning) og fjellenger, der det vokser mange farger, frukttrær og lyng.",
     },
 };
 
